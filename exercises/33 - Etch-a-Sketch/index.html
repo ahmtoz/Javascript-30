@@ -12,7 +12,7 @@
   <div class="canvasWrap">
     <canvas width="1600" height="1000" id="etch-a-sketch"></canvas>
     <div class="buttons">
-      <button class="shake">Shake!</button>
+      <button class="shake">Shake and Clear!</button>
     </div>
 
   </div>
@@ -32,7 +32,6 @@
     canvas {
       border: 30px solid #e80000;
       border-radius: 10px;
-      /* Set the width and height to half the actual size so it doesn't look pixelated */
       width: 800px;
       height: 500px;
       background: white;
@@ -40,6 +39,21 @@
 
     canvas.shake {
       animation: shake 0.5s linear 1;
+    }
+
+    button {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 10px;
+      background-color: #e80000;
+      border: none;
+      cursor: pointer;
+      color: white;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #c80000;
     }
 
     @keyframes shake {
