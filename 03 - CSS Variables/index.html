@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Scoped CSS Variables and JS</title>
-  <link rel="icon" href="https://fav.farm/✅" />
+  <link rel="icon" href="https://fav.farm/🔥" />
 </head>
+
 <body>
   <h2>Update CSS Variables with <span class='hl'>JS</span></h2>
 
@@ -19,7 +21,8 @@
     <input id="base" type="color" name="base" value="#ffc600">
   </div>
 
-  <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500">
+  <img
+    src="https://images.unsplash.com/photo-1770885653473-ca48b4d69173?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
 
   <style>
     :root {
@@ -27,20 +30,6 @@
       --spacing: 10px;
       --blur: 10px;
     }
-
-    img {
-      padding: var(--spacing);
-      background: var(--base);
-      filter: blur(var(--blur));
-    }
-
-    .hl {
-      color: var(--base);
-    }
-
-    /*
-      misc styles, nothing to do with CSS variables
-    */
 
     body {
       text-align: center;
@@ -58,20 +47,29 @@
     input {
       width: 100px;
     }
+
+    img {
+      width: 800px;
+      height: 500px;
+      padding: var(--spacing);
+      background-color: var(--base);
+      filter: blur(var(--blur));
+    }
   </style>
 
   <script>
-    const inputs = document.querySelectorAll('.controls input');
+    const inputs = document.querySelectorAll(".controls input");
 
     function handleUpdate() {
-      const suffix = this.dataset.sizing || '';
-      document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+      const suffix = this.dataset.sizing || "";
+      document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix)
     }
 
-    inputs.forEach(input => input.addEventListener('change', handleUpdate));
-    inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
+    inputs.forEach(input => {
+      input.addEventListener("change", handleUpdate);
+    })
   </script>
 
-
 </body>
+
 </html>
